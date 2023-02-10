@@ -7,13 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppRoutingModule = void 0;
+var detail_product_component_1 = require("./detail-product/detail-product.component");
+var not_found_component_1 = require("./not-found/not-found.component");
 var offres_emploi_component_1 = require("./offres-emploi/offres-emploi.component");
 var product_component_1 = require("./product/product.component");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var routes = [
+    { path: '', redirectTo: 'products', pathMatch: 'full' },
     { path: 'products', component: product_component_1.ProductComponent },
-    { path: 'offres-emploi', component: offres_emploi_component_1.OffresEmploiComponent }
+    { path: 'offres-emploi', component: offres_emploi_component_1.OffresEmploiComponent },
+    { path: 'product/:id', component: detail_product_component_1.DetailProductComponent },
+    { path: '**', component: not_found_component_1.NotFoundComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

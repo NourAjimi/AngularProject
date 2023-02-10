@@ -36,8 +36,9 @@
     <p class="card-text">Quantity : {{product.quantity}}</p>
     <p class="card-text"> LIKE: {{product.like}}</p>
 
-    <button href="#" class="btn btn-primary" (click)="decremente(i)" [disabled]="product.quantity==0" >buy!</button>
-    <button href="#" class="btn btn-primary" (click)="incremente(i)">like</button>
+    <button class="btn btn-primary" (click)="decremente(i)" [disabled]="product.quantity==0" >Buy</button>
+    <button class="btn btn-success" (click)="incremente(i)">Like</button>
+    <button class="btn btn-info" [routerLink]="['/product',product.id]">Details</button>
   </div>
   </div></div>
 </div>
