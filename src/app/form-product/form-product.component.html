@@ -1,28 +1,42 @@
-<form>
+<form #f="ngForm">
+
     <div class="mb-3">
       <label for="idProduct" class="form-label">Id Product</label>
-      <input type="number" class="form-control" id="idProduct" >
+      <input type="number" class="form-control" name="idProduct" placeholder="enter id" [(ngModel)]="product.id" required  min="0" #id="ngModel">
+      <div *ngIf="id.invalid && id.touched">
+        <div class="alert alert-danger">id required</div>
+      </div>
     </div>
 
     <div class="mb-3">
       <label for="titleProduct" class="form-label">Title Product</label>
-      <input type="text" class="form-control" id="titleProduct" >
+      <input type="text" class="form-control" name="titleProduct" placeholder="enter title " [(ngModel)]="product.title" required minlength="3" #title="ngModel">
+      <div  class="alert alert-danger" *ngIf="title.invalid && title.touched">
+        <div *ngIf="title.errors?.['required']">title required</div>
+        <div *ngIf="title.errors?.['minlength']">title minlength=3</div>
+      </div>  
     </div>
 
     <div class="mb-3">
       <label for="priceProduct" class="form-label">Price Product</label>
-      <input type="number" class="form-control" id="priceProduct" >
-    </div>
-
-    <div class="mb-3">
-      <label for="priceProduct" class="form-label">Price Product</label>
-      <input type="number" class="form-control" id="priceProduct" >
+      <input type="number" class="form-control" name="priceProduct" placeholder="enter price " [(ngModel)]="product.price" required min="0" #price="ngModel">
+      <div class="alert alert-danger" *ngIf="price.invalid && price.touched">
+        <div>price required</div>
+      </div>  
     </div>
 
     <div class="mb-3">
       <label for="quantityProduct" class="form-label">Quantity Product</label>
-      <input type="number" class="form-control" id="quantityProduct" >
+      <input type="number" class="form-control" name="quantityProduct" placeholder="enter quantity" [(ngModel)]="product.quantity" required min="0" #quantity="ngModel">
+      <div class="alert alert-danger" *ngIf="quantity.invalid && quantity.touched">
+        <div>quantity required</div>
+      </div>  
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
   </form>
+
+  {{product.id}}
+  {{product.title}}
+  {{product.price}}
+  {{product.quantity}}
