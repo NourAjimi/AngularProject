@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppRoutingModule = void 0;
+var form_product_component_1 = require("./form-product/form-product.component");
 var detail_product_component_1 = require("./detail-product/detail-product.component");
 var not_found_component_1 = require("./not-found/not-found.component");
 var offres_emploi_component_1 = require("./offres-emploi/offres-emploi.component");
@@ -17,6 +18,7 @@ var routes = [
     { path: '', redirectTo: 'products', pathMatch: 'full' },
     { path: 'products', component: product_component_1.ProductComponent },
     { path: 'offres-emploi', component: offres_emploi_component_1.OffresEmploiComponent },
+    { path: 'add-product', component: form_product_component_1.FormProductComponent },
     { path: 'product/:id', component: detail_product_component_1.DetailProductComponent },
     { path: '**', component: not_found_component_1.NotFoundComponent }
 ];

@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailProductComponent } from './detail-product/detail-product.componen
     ArticlesComponent,
     NavbarComponent,
     NotFoundComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    FormProductComponent
   ],
   imports: [
     BrowserModule,

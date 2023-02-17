@@ -1,3 +1,4 @@
+import { FormProductComponent } from './form-product/form-product.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: 'products', component: ProductComponent },
   { path: 'offres-emploi', component: OffresEmploiComponent },
+  { path: 'add-product', component: FormProductComponent },
   { path: 'product/:id', component: DetailProductComponent },
   { path: '**', component: NotFoundComponent }
 ];
