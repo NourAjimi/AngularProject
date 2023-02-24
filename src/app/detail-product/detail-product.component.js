@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.DetailProductComponent = void 0;
 var core_1 = require("@angular/core");
 var DetailProductComponent = /** @class */ (function () {
+    //AcitivatedRoute is a service 
     function DetailProductComponent(route) {
         this.route = route;
     }

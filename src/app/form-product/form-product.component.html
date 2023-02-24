@@ -10,7 +10,7 @@
 
     <div class="mb-3">
       <label for="titleProduct" class="form-label">Title Product</label>
-      <input type="text" class="form-control" name="titleProduct" placeholder="enter title " [(ngModel)]="product.title" required minlength="3" #title="ngModel">
+      <input type="text" class="form-control" name="titleProduct" placeholder="enter title " [(ngModel)]="product.title" required minlength="3"pattern="[A-Za-z]{3}" #title="ngModel">
       <div  class="alert alert-danger" *ngIf="title.invalid && title.touched">
         <div *ngIf="title.errors?.['required']">title required</div>
         <div *ngIf="title.errors?.['minlength']">title minlength=3</div>

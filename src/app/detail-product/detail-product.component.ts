@@ -10,6 +10,7 @@ export class DetailProductComponent implements OnInit {
 
   id!: number;
 
+  //AcitivatedRoute is a service 
   constructor(private route: ActivatedRoute) {
   }
 
