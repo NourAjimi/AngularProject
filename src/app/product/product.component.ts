@@ -1,6 +1,7 @@
 import { ProductService } from './../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from "../core/model/product";
+import { MethodePartageService } from '../services/methode-partage.service';
 
 @Component({
   selector: 'app-product',
@@ -12,13 +13,13 @@ export class ProductComponent implements OnInit {
   listProduct!: Product[]
   test: boolean = true
   priceMax!: number;
+  number!: number;
 
-  constructor(private productService: ProductService) {
-
+  constructor(private productService: ProductService, private serviceMethodePartage: MethodePartageService) {
   }
   ngOnInit(): void {
-    this.listProduct=this.productService.productList;
-
+    this.listProduct = this.productService.productList;
+    this.number = this.serviceMethodePartage.getNumberOf(this.listProduct, 'quantity', 0);
   }
   decremente(i: number) {
 
