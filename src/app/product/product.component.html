@@ -24,23 +24,26 @@
 -->
 <input type="number" value="" name="price" [(ngModel)]="priceMax"  />
 <div class="row">
-<div class="col-md-4" *ngFor="let product of listProduct,let i=index">
-  <div *ngIf="priceMax>=product.price||priceMax==null">
-  <div class="card" style="width: 18rem;" >
-  <img class="card-img-top" src="assets/img/{{product.title}}.jpg" alt="Card image cap">
-  <div  class="card-body"  >
+    <div class="col-md-4" *ngFor="let product of listProduct,let i=index">
+      <div *ngIf="priceMax>=product.price||priceMax==null">
+      <div class="card" style="width: 18rem;" >
+      <img class="card-img-top" src="assets/img/{{product.title}}.jpg" alt="Card image cap">
+      <div  class="card-body"  >
 
-    <h5 class="card-title">{{product.title}}</h5>
-    <p class="card-text"> ID: {{product.id}}</p>
-    <p class="card-text"> PRICE: {{product.price}}</p>
-    <p class="card-text">Quantity : {{product.quantity}}</p>
-    <p class="card-text"> LIKE: {{product.like}}</p>
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text"> ID: {{product.id}}</p>
+        <p class="card-text"> PRICE: {{product.price}}</p>
+        <p class="card-text">Quantity : {{product.quantity}}</p>
+        <p class="card-text"> LIKE: {{product.like}}</p>
 
-    <button class="btn btn-primary" (click)="decremente(i)" [disabled]="product.quantity==0" >Buy</button>
-    <button class="btn btn-success" (click)="incremente(i)">Like</button>
-    <button class="btn btn-info" [routerLink]="['/product',product.id]">Details</button>
-  </div>
-  </div></div>
+        <button class="btn btn-primary" (click)="decremente(i)" [disabled]="product.quantity==0" >Buy</button>
+        <button class="btn btn-success" (click)="incremente(i)">Like</button>
+        <button class="btn btn-info" [routerLink]="['/product',product.id]">Details</button>
+      </div>
+      
+    </div>
+
+      </div>
+    </div>
 </div>
 
-</div>

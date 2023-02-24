@@ -9,16 +9,13 @@ exports.__esModule = true;
 exports.ProductComponent = void 0;
 var core_1 = require("@angular/core");
 var ProductComponent = /** @class */ (function () {
-    function ProductComponent() {
+    function ProductComponent(productService) {
+        this.productService = productService;
         this.title = "welcome 4se ";
         this.test = true;
     }
     ProductComponent.prototype.ngOnInit = function () {
-        this.listProduct = [
-            { id: 1, title: "T-shirt1", price: 18, quantity: 0, like: 0 },
-            { id: 2, title: "T-shirt2", price: 21, quantity: 10, like: 0 },
-            { id: 3, title: "T-shirt3", price: 16, quantity: 8, like: 0 },
-        ];
+        this.listProduct = this.productService.productList;
     };
     ProductComponent.prototype.decremente = function (i) {
         this.listProduct[i].quantity--;

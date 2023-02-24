@@ -10,11 +10,13 @@ exports.DetailProductComponent = void 0;
 var core_1 = require("@angular/core");
 var DetailProductComponent = /** @class */ (function () {
     //AcitivatedRoute is a service 
-    function DetailProductComponent(route) {
+    function DetailProductComponent(route, productService) {
         this.route = route;
+        this.productService = productService;
     }
     DetailProductComponent.prototype.ngOnInit = function () {
         this.id = this.route.snapshot.params['id'];
+        this.product = this.productService.productList[this.id - 1];
     };
     DetailProductComponent = __decorate([
         core_1.Component({

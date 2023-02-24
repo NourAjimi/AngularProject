@@ -10,10 +10,16 @@ exports.FormProductComponent = void 0;
 var product_1 = require("./../core/model/product");
 var core_1 = require("@angular/core");
 var FormProductComponent = /** @class */ (function () {
-    function FormProductComponent() {
+    function FormProductComponent(productService, route) {
+        this.productService = productService;
+        this.route = route;
     }
     FormProductComponent.prototype.ngOnInit = function () {
         this.product = new product_1.Product();
+    };
+    FormProductComponent.prototype.ajouter = function (product) {
+        this.productService.addProduct(this.product);
+        this.route.navigateByUrl('/products');
     };
     FormProductComponent = __decorate([
         core_1.Component({
